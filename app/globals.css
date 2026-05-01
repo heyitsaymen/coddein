@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #050807;
+  --bg-soft: #0A0F0C;
+  --bg-card: #0E1612;
+  --border: #1F2A23;
+  --text: #F8F5F1;
+  --text-soft: #9CA39E;
+  --brand: #14532D;
+  --brand-light: #1B6840;
+  --brand-accent: #22C55E;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+::selection {
+  background: rgba(34, 197, 94, 0.25);
+  color: #F8F5F1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050807;
+}
+::-webkit-scrollbar-thumb {
+  background: #1F2A23;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1B6840;
+}
+
+/* Utility: subtle radial backdrop */
+.bg-radial-brand {
+  background-image:
+    radial-gradient(60% 60% at 50% 0%, rgba(27, 104, 64, 0.18) 0%, transparent 60%),
+    radial-gradient(40% 40% at 90% 30%, rgba(34, 197, 94, 0.08) 0%, transparent 60%);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #F8F5F1 0%, #1B6840 50%, #22C55E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-brand {
+  background: linear-gradient(135deg, #14532D 0%, #1B6840 50%, #22C55E 100%);
+}
+
+/* Border gradient */
+.border-gradient {
+  position: relative;
+  background-clip: padding-box;
+}
+.border-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.4), rgba(27, 104, 64, 0.05) 50%, rgba(34, 197, 94, 0.2));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Spotlight cursor effect (optional) */
+.spotlight {
+  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(34, 197, 94, 0.06),
+    transparent 40%);
+}
+
+/* Shimmer button */
+.shimmer-bg {
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(34, 197, 94, 0.25) 50%,
+    transparent 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* Marquee */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
