@@ -19,13 +19,6 @@ const sections = [
       { label: "contact@coddein.com", href: "mailto:contact@coddein.com" },
     ],
   },
-  {
-    title: "Ressources",
-    links: [
-      { label: "Mentions légales", href: "#" },
-      { label: "Politique de confidentialité", href: "#" },
-    ],
-  },
 ];
 
 export default function Footer() {
@@ -50,18 +43,6 @@ export default function Footer() {
               Agence de développement web. On conçoit, on code, on déploie —
               votre site en 48h chrono.
             </p>
-            <div className="mt-6 flex gap-3">
-              {["X", "in", "Be", "Gh"].map((s) => (
-                <Link
-                  key={s}
-                  href="#"
-                  aria-label={s}
-                  className="w-9 h-9 rounded-full border border-line flex items-center justify-center text-offwhite text-xs hover:border-brand-accent hover:text-brand-accent transition-all"
-                >
-                  {s}
-                </Link>
-              ))}
-            </div>
           </div>
 
           {/* Sections */}

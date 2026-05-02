@@ -22,7 +22,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-space)", "system-ui", "sans-serif"],
+        display: ['"Stack Sans Notch"', "system-ui", "sans-serif"],
       },
       backgroundImage: {
         "grid-glow":
